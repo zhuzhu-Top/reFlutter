@@ -21,6 +21,7 @@ jobs:
       - name: Set variables
         run: |
          echo "zhuzhu ok"
+         uname -a
   #     - name: Check out repository od
   #       uses: actions/checkout@v2
   #     - name: Set variables
