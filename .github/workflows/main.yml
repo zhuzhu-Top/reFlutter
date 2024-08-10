@@ -13,26 +13,18 @@ on:
         default: 'warning'
 
 jobs:
-  example-ngrok-kind-v2:
+  build-android:
     runs-on: ubuntu-20.04
     steps:
+    - name: Check out repository od
+      uses: actions/checkout@v2
+    - name: Set variables
+      run: |
+        HASH=$(cat SNAPSHOT_HASH)
+        echo "SNAPSHOT_HASH=$HASH" >> $GITHUB_ENV
+
     - name: Setup Debug Session
       uses: csexton/debugger-action@master
-# jobs:
-#   build-android:
-#     runs-on: ubuntu-20.04
-#     steps:
-
-#       - name: Set variables
-#         run: |
-#          echo "zhuzhu ok"
-#          uname -a
-  #     - name: Check out repository od
-  #       uses: actions/checkout@v2
-  #     - name: Set variables
-  #       run: |
-  #        HASH=$(cat SNAPSHOT_HASH)
-  #        echo "SNAPSHOT_HASH=$HASH" >> $GITHUB_ENV
   #     - name: Install tools
   #       run: |
   #         sudo apt-get update
