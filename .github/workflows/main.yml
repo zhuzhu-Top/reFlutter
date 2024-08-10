@@ -14,7 +14,7 @@ on:
 
 jobs:
   example-ngrok-kind-v2:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
     - name: Setup Debug Session
       uses: csexton/debugger-action@master
