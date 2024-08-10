@@ -1,7 +1,9 @@
 name: Build
 
 on:
-  pull_request:
+  # pull_request:
+    # 
+  push: 
     branches:
       - '*'
   # 手动触发事件
