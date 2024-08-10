@@ -1,9 +1,9 @@
 name: Build
 
 on:
-  pull_request:
-    branches:
-      - '*'
+  # pull_request:
+    # branches:
+      # - '*'
   # 手动触发事件
   workflow_dispatch:
     inputs:
@@ -11,17 +11,11 @@ on:
         description: 'Log level'
         required: true
         default: 'warning'
-      tags:
-        description: 'Test scenario tags'
-jobs:
-  build-android:
-    runs-on: ubuntu-20.04
-    steps:
 
-      - name: Set variables
-        run: |
-         echo "zhuzhu ok"
-         uname -a
+jobs:
+  example-ngrok-kind-v2:
+    runs-on: ubuntu-latest
+    steps:
       - name: Creating kind cluster
         uses: helm/kind-action@v1.0.0-rc.1
       - uses: shaowenchen/debugger-action@v2
@@ -30,6 +24,15 @@ jobs:
         continue-on-error: true
         with:
           ngrok_token: ${{ secrets.NGROK_TOKEN }}
+# jobs:
+#   build-android:
+#     runs-on: ubuntu-20.04
+#     steps:
+
+#       - name: Set variables
+#         run: |
+#          echo "zhuzhu ok"
+#          uname -a
   #     - name: Check out repository od
   #       uses: actions/checkout@v2
   #     - name: Set variables
