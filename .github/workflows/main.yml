@@ -43,7 +43,7 @@ jobs:
     - name: gclient sync
       run: |
         ROOT_DIR=`pwd`
-        export PATH=$PATH:$ROOT_DIR/depot_tools
+        export PATH=$PATH:$ROOT_DIR/depot_tools:$PATH
         cd engine
         git config --global user.email "reflutter@example.com" && git config --global user.name "reflutter"
         git fetch origin $(reflutter ${{env.SNAPSHOT_HASH}} -l)
