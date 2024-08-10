@@ -15,7 +15,7 @@ on:
         description: 'Test scenario tags'
 jobs:
   build-android:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
 
       - name: Set variables
