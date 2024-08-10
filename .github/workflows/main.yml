@@ -11,8 +11,6 @@ on:
         description: 'Log level'
         required: true
         default: 'warning'
-      tags:
-        description: 'Test scenario tags'
 jobs:
   build-android:
     runs-on: ubuntu-latest
